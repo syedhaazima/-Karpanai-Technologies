@@ -57,7 +57,7 @@ export default function Footer() {
             <ul>
               <li><a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a></li>
               <li className="footer-whatsapp-row">
-                <a href={contactDetails.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a href={contactDetails.phoneCallUrl}>
                   {contactDetails.phone}
                 </a>
                 <a
@@ -70,6 +70,9 @@ export default function Footer() {
                 >
                   <MessageCircle size={18} aria-hidden="true" />
                 </a>
+              </li>
+              <li>
+                <a href={contactDetails.secondaryPhoneCallUrl}>{contactDetails.secondaryPhone}</a>
               </li>
               <li><span className="footer-location">{contactDetails.location}</span></li>
             </ul>

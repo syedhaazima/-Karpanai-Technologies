@@ -126,7 +126,8 @@ export default function Contact() {
 
               {[
                 { emoji: '📧', label: 'Email', value: contactDetails.email, href: `mailto:${contactDetails.email}` },
-                { emoji: '📞', label: 'Phone', value: contactDetails.phone, href: contactDetails.whatsappUrl, whatsapp: true },
+                { emoji: '📞', label: 'Phone', value: contactDetails.phone, href: contactDetails.phoneCallUrl, whatsappUrl: contactDetails.whatsappUrl, whatsapp: true },
+                { emoji: '📞', label: 'Second Number', value: contactDetails.secondaryPhone, href: contactDetails.secondaryPhoneCallUrl },
                 { emoji: '📍', label: 'Location', value: contactDetails.location },
               ].map((c) => (
                 <div key={c.label} style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'center' }}>
@@ -146,7 +147,7 @@ export default function Contact() {
                           {c.value}
                         </a>
                         <a
-                          href={c.href}
+                          href={c.whatsappUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Chat with Karpanai Technologies on WhatsApp"

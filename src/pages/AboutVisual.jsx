@@ -216,6 +216,37 @@ export default function AboutVisual() {
         </div>
       </section>
 
+      <section className="about-section about-partner-section">
+        <div className="about-container">
+          <motion.div className="about-partner-wrap" {...revealProps('left', 0, reduceMotion)}>
+            <p className="about-eyebrow">PARTNER</p>
+            <h2>Our Partner</h2>
+            <a
+              className="about-partner-card"
+              href="https://www.mncsglobal.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit MNCS Global website"
+            >
+              <div className="about-partner-card-top">
+                <span className="about-partner-badge">MNCS GLOBAL</span>
+                <span className="about-partner-external" aria-hidden="true">↗</span>
+              </div>
+              <div className="about-partner-content">
+                <p className="about-partner-name">MNCS Global</p>
+                <p className="about-partner-copy">
+                  Building meaningful partnerships that connect technology, innovation and opportunities.
+                </p>
+                <span className="about-partner-link">
+                  Visit Partner
+                  <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="about-cta-section">
         <div className="about-container about-cta-actions">
           <MotionLink
