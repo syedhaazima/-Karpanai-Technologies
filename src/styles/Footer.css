@@ -2,6 +2,7 @@
 
 .footer {
   background: #2563eb;
+  font-family: Arial, sans-serif;
 
   border-top: none;
 
@@ -9,6 +10,10 @@
 
   position: relative;
   overflow: hidden;
+}
+
+.footer * {
+  font-family: Arial, sans-serif;
 }
 
 .footer::before {
@@ -83,7 +88,7 @@
 /* ─── Footer Columns ─────────────────────────────────── */
 
 .footer-col h4 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: Arial, sans-serif;
 
   font-size: 0.75rem;
 

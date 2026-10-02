@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import logoImg from '../assets/images/logo.jpg';
+import logoImg from '../assets/logokarpanai.png';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
