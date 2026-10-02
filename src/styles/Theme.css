@@ -1,0 +1,114 @@
+/* Shared visual system — applied across every route */
+:root {
+  --navy: #0b1f3a;
+  --navy-light: #14345d;
+  --royal: #1d4ed8;
+  --electric: #2563eb;
+  --blue-mid: #3b82f6;
+  --blue-light: #93c5fd;
+  --blue-pale: #dbeafe;
+  --bg-page: #f4f8ff;
+  --bg-section: #edf5ff;
+  --bg-white: #ffffff;
+  --text-dark: #0d1b30;
+  --text-mid: #334155;
+  --text-muted: #64748b;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --shadow-card: 0 18px 42px rgba(15, 54, 110, 0.08);
+  --shadow-lift: 0 20px 50px rgba(15, 54, 110, 0.14);
+}
+
+main {
+  background: linear-gradient(180deg, #f7faff 0%, #f3f8ff 100%);
+}
+
+.page-enter {
+  min-height: 100%;
+}
+
+.btn-primary,
+.edu-btn-primary,
+.nav-links .nav-cta a {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+.btn-primary:hover,
+.edu-btn-primary:hover,
+.nav-links .nav-cta a:hover {
+  background: linear-gradient(135deg, #163caf, #1d4ed8);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline,
+.edu-btn-secondary {
+  border-color: var(--electric);
+  color: var(--royal);
+  background: #fff;
+}
+
+.btn-outline:hover,
+.edu-btn-secondary:hover {
+  background: var(--bg-section);
+}
+
+.courses-page,
+.about-page,
+.contact-page {
+  padding-top: 68px !important;
+  background: var(--bg-page) !important;
+}
+
+.site-page-hero {
+  background: linear-gradient(135deg, #fff 0%, #f4f8ff 58%, #e6f0ff 100%) !important;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.1) !important;
+}
+
+.site-cta {
+  background: linear-gradient(135deg, #0b2b5a 0%, #1d4ed8 56%, #2563eb 100%) !important;
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  box-shadow: var(--shadow-lift);
+}
+
+.course-card {
+  border-radius: var(--radius-md) !important;
+  border-color: rgba(37, 99, 235, 0.14) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.course-card:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 3px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .courses-page-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .site-page-hero { min-height: auto !important; padding: 64px 0 !important; }
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer { padding-top: 48px; }
+}
+
+@media (max-width: 640px) {
+  .courses-page-grid { grid-template-columns: 1fr; }
+  .edu-btns, .edu-cta-btns { width: 100%; }
+  .edu-btns > a, .edu-cta-btns > a { justify-content: center; flex: 1 1 auto; }
+}

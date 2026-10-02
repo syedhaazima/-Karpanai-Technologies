@@ -1,0 +1,378 @@
+.computer-vision-course-page {
+  --vision-blue: #1d4ed8;
+  --vision-blue-dark: #153d8a;
+  --vision-ink: #10223d;
+  --vision-muted: #53657c;
+  --vision-pale: #f3f8ff;
+  --vision-border: #dce8f7;
+  color: var(--vision-ink);
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.computer-vision-course-page * {
+  font-family: Arial, sans-serif;
+}
+
+.computer-vision-container {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.computer-vision-hero {
+  padding: 112px 0 76px;
+  background: linear-gradient(118deg, #fff 0%, #f5f9ff 58%, #eaf3ff 100%);
+  border-bottom: 1px solid #e2ecf8;
+}
+
+.computer-vision-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: 44px;
+}
+
+.computer-vision-eyebrow {
+  margin: 0 0 15px;
+  color: var(--vision-blue);
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: .08em;
+}
+
+.computer-vision-hero-copy h1 {
+  max-width: 555px;
+  margin: 0 0 20px;
+  color: var(--vision-ink);
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.computer-vision-intro {
+  max-width: 540px;
+  margin: 0;
+  color: var(--vision-muted);
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.computer-vision-hero-visual {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d8e7f8;
+  border-radius: 16px;
+  background: #eaf3ff;
+  box-shadow: 0 18px 44px rgba(21, 52, 91, .11);
+}
+
+.computer-vision-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: saturate(.78);
+}
+
+.computer-vision-hero-visual::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: #1d4ed8;
+  mix-blend-mode: color;
+  opacity: .3;
+  pointer-events: none;
+}
+
+.computer-vision-areas-section {
+  padding: 66px 0 72px;
+  background: var(--vision-pale);
+}
+
+.computer-vision-section-heading {
+  margin-bottom: 23px;
+}
+
+.computer-vision-section-heading h2 {
+  margin: 0;
+  color: var(--vision-ink);
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.computer-vision-area-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.computer-vision-area-card {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid var(--vision-border);
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(22, 58, 104, .045);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.computer-vision-area-card:hover {
+  transform: translateY(-3px);
+  border-color: #aac7ee;
+  box-shadow: 0 12px 25px rgba(22, 58, 104, .09);
+}
+
+.computer-vision-area-icon {
+  width: 39px;
+  height: 39px;
+  flex: 0 0 auto;
+  padding: 9px;
+  color: var(--vision-blue);
+  border-radius: 10px;
+  background: #eaf2ff;
+}
+
+.computer-vision-area-card h3 {
+  margin: 0;
+  color: var(--vision-ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.computer-vision-practical-section {
+  padding: 28px 0;
+  background: #fff;
+}
+
+.computer-vision-callout {
+  padding: 22px 24px;
+  border: 1px solid var(--vision-border);
+  border-left: 4px solid var(--vision-blue);
+  border-radius: 13px;
+  background: #f5f9ff;
+}
+
+.computer-vision-callout .computer-vision-eyebrow {
+  margin-bottom: 7px;
+}
+
+.computer-vision-callout-text {
+  margin: 0 0 17px;
+  color: var(--vision-ink);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.computer-vision-project-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.computer-vision-project {
+  display: flex;
+  min-height: 72px;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid #e1eaf6;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.computer-vision-project span,
+.computer-vision-audience-card span,
+.computer-vision-outcome-card span {
+  flex: 0 0 auto;
+  color: #7090bc;
+  font-size: .7rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.computer-vision-project p,
+.computer-vision-audience-card p,
+.computer-vision-outcome-card p {
+  margin: 0;
+  color: var(--vision-ink);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.computer-vision-audience-section {
+  padding: 58px 0 64px;
+  background: var(--vision-pale);
+}
+
+.computer-vision-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.computer-vision-audience-card {
+  display: flex;
+  min-height: 94px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--vision-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(22, 58, 104, .04);
+}
+
+.computer-vision-outcomes-section {
+  padding: 58px 0 62px;
+  background: #fff;
+}
+
+.computer-vision-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.computer-vision-outcome-card {
+  display: flex;
+  min-height: 104px;
+  gap: 11px;
+  padding: 16px;
+  border: 1px solid var(--vision-border);
+  border-radius: 12px;
+  background: var(--vision-pale);
+}
+
+.computer-vision-cta-section {
+  padding: 32px 0 40px;
+  background: #fff;
+}
+
+.computer-vision-cta-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.computer-vision-cta-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  color: #fff;
+  border-radius: 9px;
+  background: var(--vision-blue);
+  box-shadow: 0 9px 22px rgba(29, 78, 216, .18);
+  font-size: .92rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.computer-vision-cta-button:hover {
+  transform: translateY(-2px);
+  background: var(--vision-blue-dark);
+  box-shadow: 0 12px 26px rgba(29, 78, 216, .24);
+}
+
+@media (max-width: 1000px) {
+  .computer-vision-area-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .computer-vision-audience-grid,
+  .computer-vision-outcomes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .computer-vision-project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .computer-vision-container {
+    width: min(100% - 36px, 540px);
+  }
+
+  .computer-vision-hero {
+    padding: 100px 0 56px;
+  }
+
+  .computer-vision-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .computer-vision-hero-copy h1 {
+    font-size: 38px;
+  }
+
+  .computer-vision-intro {
+    font-size: 16px;
+  }
+
+  .computer-vision-areas-section,
+  .computer-vision-audience-section,
+  .computer-vision-outcomes-section {
+    padding: 48px 0 54px;
+  }
+
+  .computer-vision-section-heading h2 {
+    font-size: 26px;
+  }
+
+  .computer-vision-area-grid,
+  .computer-vision-project-grid,
+  .computer-vision-audience-grid,
+  .computer-vision-outcomes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .computer-vision-area-card {
+    min-height: 106px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .computer-vision-project {
+    min-height: 78px;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .computer-vision-audience-card,
+  .computer-vision-outcome-card {
+    min-height: 104px;
+    padding: 12px;
+  }
+
+  .computer-vision-project p,
+  .computer-vision-audience-card p,
+  .computer-vision-outcome-card p {
+    font-size: 13px;
+  }
+
+  .computer-vision-callout {
+    padding: 18px;
+  }
+
+  .computer-vision-callout-text {
+    font-size: 17px;
+  }
+}
