@@ -1,10 +1,23 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
 import { courses } from '../data/courses';
 import { contactDetails } from '../data/contact';
 
 const initialForm = { name: '', email: '', phone: '', course: '', message: '' };
+
+const WhatsAppIcon = () => (
+  <svg viewBox="0 0 32 32" width="17" height="17" aria-hidden="true" focusable="false">
+    <circle cx="16" cy="16" r="16" fill="#25D366" />
+    <path
+      fill="#ffffff"
+      d="M22.07 18.74c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.2-.44-2.29-1.41-.85-.75-1.42-1.67-1.59-1.95-.17-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.47.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.28-1.14 1.11-1.14 2.71 0 1.6 1.17 3.15 1.33 3.37.16.22 2.29 3.49 5.55 4.89.78.34 1.39.54 1.87.69.79.25 1.51.22 2.08.13.64-.1 1.94-.79 2.22-1.55.28-.76.28-1.4.2-1.53-.08-.14-.28-.22-.57-.36Z"
+    />
+    <path
+      fill="#ffffff"
+      d="M18.72 10.2a5.24 5.24 0 0 1 3.98 1.64 5.42 5.42 0 0 1 1.23 3.2c-.02 1.48-.75 2.76-2.04 3.58l-.02.01c-.93.57-1.6.87-2.53.95-.56.05-1.03.02-1.5-.15l-1.39-.53-.7.18.27.76.34.95c.08.23.15.46.05.69-.1.23-.46.43-1.15.58-.17.04-.34.06-.5.08-.32.03-.63-.03-.93-.15-.73-.29-1.1-.74-1.45-1.39-.39-.72-.59-1.41-.57-2.2.03-.59.24-1.14.51-1.64.35-.6.85-1.11 1.46-1.5.86-.55 1.86-.7 2.82-.44.2.06.39.16.56.26.17.1.31.1.45.03.14-.07.77-.44.95-.65.18-.21.36-.14.61-.09.24.05 1.48.7 1.73.82a.45.45 0 0 1 .18.46.65.65 0 0 1-.1.28c-.12.18-.31.3-.49.48-.18.18-.22.3-.11.52.11.22.32.48.49.69.28.35.57.73.74 1.16.15.38.22.82.09 1.2-.16.46-.53.72-.87.89-.43.22-.85.28-1.26.16-.4-.12-.7-.18-1.09-.3-.34-.1-.73-.03-1.08.18-.08.05-.15.11-.23.18-.16.13-.33.24-.58.2-.08-.01-.16-.04-.23-.08l-.44-.15-.52-.17c-.31-.11-.62-.22-.86-.41-.27-.22-.47-.48-.61-.82-.15-.36-.14-.74-.02-1.12.13-.4.52-.82.82-1.18.26-.3.55-.59.87-.84.42-.33.89-.56 1.39-.73.25-.09.49-.18.74-.25Z"
+    />
+  </svg>
+);
 
 /* Shared input style — white bg, dark text, blue border */
 const inputStyle = (err) => ({
@@ -111,7 +124,7 @@ export default function Contact() {
             {/* ── Left info ── */}
             <motion.div
               initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <p className="section-label" style={{ marginBottom: 16 }}>Get In Touch</p>
+              <p className="section-label" style={{ marginBottom: 16, fontFamily: 'Arial, sans-serif' }}>Get In Touch</p>
               <h1 style={{
                 fontFamily: 'Arial, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 800, lineHeight: 1.1, marginBottom: 20,
@@ -127,10 +140,10 @@ export default function Contact() {
               {[
                 { emoji: '📧', label: 'Email', value: contactDetails.email, href: `mailto:${contactDetails.email}` },
                 { emoji: '📞', label: 'Phone', value: contactDetails.phone, href: contactDetails.phoneCallUrl, whatsappUrl: contactDetails.whatsappUrl, whatsapp: true },
-                { emoji: '📞', label: 'Second Number', value: contactDetails.secondaryPhone, href: contactDetails.secondaryPhoneCallUrl },
+                { emoji: '📞', label: 'Phone', value: contactDetails.secondaryPhone, href: contactDetails.secondaryPhoneCallUrl },
                 { emoji: '📍', label: 'Location', value: contactDetails.location },
               ].map((c) => (
-                <div key={c.label} style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'center' }}>
+                <div key={`${c.label}-${c.value}`} style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'center' }}>
                   <div style={{
                     width: 48, height: 48, borderRadius: 12,
                     background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.2)',
@@ -140,10 +153,10 @@ export default function Contact() {
                     {c.emoji}
                   </div>
                   <div>
-                    <p style={{ color: '#94a3b8', fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{c.label}</p>
+                    <p style={{ color: '#94a3b8', fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'Arial, sans-serif' }}>{c.label}</p>
                     {c.whatsapp ? (
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <a href={c.href} target="_blank" rel="noopener noreferrer" style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none' }}>
+                        <a href={c.href} target="_blank" rel="noopener noreferrer" style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none', fontFamily: 'Arial, sans-serif' }}>
                           {c.value}
                         </a>
                         <a
@@ -152,15 +165,15 @@ export default function Contact() {
                           rel="noopener noreferrer"
                           aria-label="Chat with Karpanai Technologies on WhatsApp"
                           title="WhatsApp"
-                          style={{ display: 'inline-flex', width: 30, height: 30, alignItems: 'center', justifyContent: 'center', color: '#1d4ed8', border: '1px solid rgba(37,99,235,.2)', borderRadius: '50%', background: '#eff6ff' }}
+                          style={{ display: 'inline-flex', width: 30, height: 30, alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: '#fff' }}
                         >
-                          <MessageCircle size={17} aria-hidden="true" />
+                          <WhatsAppIcon />
                         </a>
                       </div>
                     ) : c.href ? (
-                      <a href={c.href} style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none' }}>{c.value}</a>
+                      <a href={c.href} style={{ color: '#0f172a', fontWeight: 600, textDecoration: 'none', fontFamily: 'Arial, sans-serif' }}>{c.value}</a>
                     ) : (
-                      <p style={{ color: '#0f172a', fontWeight: 600 }}>{c.value}</p>
+                      <p style={{ color: '#0f172a', fontWeight: 600, fontFamily: 'Arial, sans-serif' }}>{c.value}</p>
                     )}
                   </div>
                 </div>
