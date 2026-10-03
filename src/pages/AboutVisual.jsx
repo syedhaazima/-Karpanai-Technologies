@@ -219,7 +219,6 @@ export default function AboutVisual() {
       <section className="about-section about-partner-section">
         <div className="about-container">
           <motion.div className="about-partner-wrap" {...revealProps('left', 0, reduceMotion)}>
-            <p className="about-eyebrow">PARTNER</p>
             <h2>Our Partner</h2>
             <a
               className="about-partner-card"

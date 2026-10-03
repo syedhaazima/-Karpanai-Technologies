@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { courses } from '../data/courses';
@@ -166,16 +166,14 @@ function HubCenter({ expanded, onClick, className }) {
         transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
       />
 
-      {expanded && (
-        <motion.div
-          style={{ fontSize: '1.6rem', lineHeight: 1 }}
-          initial={{ opacity: 0, rotate: 0 }}
-          animate={{ opacity: 1, rotate: 90 }}
-          transition={{ duration: 0.35 }}
-        >
-          ✕
-        </motion.div>
-      )}
+      <motion.div
+        style={{ fontSize: expanded ? '1.6rem' : '1.15rem', lineHeight: 1 }}
+        initial={false}
+        animate={{ opacity: 1, rotate: expanded ? 90 : 0, scale: expanded ? 1 : 1.06 }}
+        transition={{ duration: 0.35 }}
+      >
+        {expanded ? '✕' : '+'}
+      </motion.div>
 
       {/* Text */}
       <p style={{
@@ -198,6 +196,11 @@ function HubCenter({ expanded, onClick, className }) {
 export default function CourseHub() {
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setExpanded(true), 2000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <div className="course-hub-wrap">
