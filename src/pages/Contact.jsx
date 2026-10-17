@@ -139,8 +139,8 @@ export default function Contact() {
 
               {[
                 { emoji: '📧', label: 'Email', value: contactDetails.email, href: `mailto:${contactDetails.email}` },
-                { emoji: '📞', label: 'Phone', value: contactDetails.phone, href: contactDetails.phoneCallUrl, whatsappUrl: contactDetails.whatsappUrl, whatsapp: true },
-                { emoji: '📞', label: 'Phone', value: contactDetails.secondaryPhone, href: contactDetails.secondaryPhoneCallUrl },
+                { emoji: '📞', label: 'Phone', value: contactDetails.phone, href: contactDetails.whatsappUrl, whatsappUrl: contactDetails.whatsappUrl, whatsapp: true },
+                { emoji: '📞', label: 'Phone', value: contactDetails.secondaryPhone },
                 { emoji: '📍', label: 'Location', value: contactDetails.location },
               ].map((c) => (
                 <div key={`${c.label}-${c.value}`} style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'center' }}>
